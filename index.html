@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gamora</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <a href="index.html" >GAMORA</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="browse.html">Browse</a></li>
+      <li>
+        <a href="favorites.html" class="nav-badge">
+          ♥ Favorites <span class="badge-count fav-badge">0</span>
+        </a>
+      </li>
+      <li>
+        <a href="wishlist.html" class="nav-badge">
+          🕐 Wishlist <span class="badge-count wish-badge">0</span>
+        </a>
+      </li>
+    </ul>
+    <button class="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <main class="page-content">
+
+    <!-- HERO BANNER -->
+    <section class="hero">
+      <div class="hero-bg"></div>
+      <div class="hero-content">
+        <span class="hero-badge">✦ FEATURED GAME</span>
+        <h1 class="hero-title">Loading…</h1>
+        <div class="hero-meta">
+          <span class="hero-rating">⭐ —</span>
+          <span class="hero-year">📅 —</span>
+          <span class="hero-genre">🎯 —</span>
+        </div>
+        <p class="hero-desc">Discover the best games curated just for you.</p>
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary hero-detail-btn">View Details →</a>
+          <a href="browse.html" class="btn btn-secondary">Browse All</a>
+        </div>
+      </div>
+      <div class="hero-dots"></div>
+    </section>
+
+    <!-- SEARCH BAR -->
+    <div style="padding: 2rem 2rem 0; max-width:1400px; margin:0 auto;">
+      <div class="search-container">
+        <input type="text" class="search-input" id="hero-search" placeholder="Search games… (Enter to browse all results)">
+        <div class="search-dropdown" id="search-dropdown"></div>
+      </div>
+    </div>
+
+    <!-- TRENDING NOW -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="section-title-icon"></span>
+          Trending Now
+        </h2>
+        <a href="browse.html?ordering=-added" class="section-link">See all →</a>
+      </div>
+      <div class="games-grid" id="trending-grid"></div>
+    </section>
+
+    <!-- TOP RATED -->
+    <section class="section" style="padding-top:0">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="section-title-icon"></span>
+          Top Rated
+        </h2>
+        <a href="browse.html?ordering=-rating" class="section-link">See all →</a>
+      </div>
+      <div class="games-grid" id="toprated-grid"></div>
+    </section>
+
+    <!-- NEW RELEASES -->
+    <section class="section" style="padding-top:0">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="section-title-icon"></span>
+          New Releases
+        </h2>
+        <a href="browse.html?ordering=-released" class="section-link">See all →</a>
+      </div>
+      <div class="games-grid" id="newreleases-grid"></div>
+    </section>
+
+    <!-- METACRITIC BEST -->
+    <section class="section" style="padding-top:0;padding-bottom:4rem">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="section-title-icon"></span>
+          Metacritic Best
+        </h2>
+        <a href="browse.html?ordering=-metacritic" class="section-link">See all →</a>
+      </div>
+      <div class="games-grid" id="metacritic-grid"></div>
+    </section>
+
+  </main>
+
+  <script type="module" src="js/home.js"></script>
+</body>
+</html>
