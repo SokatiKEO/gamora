@@ -9,7 +9,7 @@
 <body data-page="wishlist">
 
   <nav class="navbar">
-    <a href="index.html" >GAMORA</a>
+    <a href="index.html"><img src="images/logo.svg" alt="Gamora" class="logo-img"></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="browse.html">Browse</a></li>
@@ -31,12 +31,33 @@
 
   <main class="page-content">
     <div class="page-hero">
-      <h1 class="page-hero-title">Wishlist <span style="font-size:1.2rem;color:var(--accent3);font-family:'Share Tech Mono',monospace" id="collection-count"></span></h1>
+      <h1 class="page-hero-title">Wishlist <span class="collection-count accent-secondary" id="collection-count"></span></h1>
     </div>
-    <div class="section" style="padding-top:0">
+    <div class="section flush-top">
       <div class="games-grid" id="collection-grid"></div>
     </div>
   </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="images/logo.svg" alt="Gamora" class="logo-img"></div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="browse.html">Browse</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="wishlist.html">Wishlist</a>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-credit">Built with ♥ for gamers everywhere.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="GitHub">⚡</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="Discord">💬</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script type="module" src="js/collection.js"></script>
 </body>
