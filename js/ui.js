@@ -31,6 +31,16 @@ export const initNavbar = () => {
         }
     })
     updateBadges()
+
+    // Navbar scroll effect — adds solid background when scrolled past hero
+    const navbar = document.querySelector(".navbar")
+    if (navbar) {
+        const handleScroll = () => {
+            navbar.classList.toggle("scrolled", window.scrollY > 50)
+        }
+        window.addEventListener("scroll", handleScroll, { passive: true })
+        handleScroll()
+    }
 }
 
 // Render skeleton loading cards

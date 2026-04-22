@@ -9,7 +9,7 @@
 <body>
 
   <nav class="navbar">
-    <a href="index.html" >GAMORA</a>
+    <a href="index.html"><img src="images/logo.svg" alt="Gamora" class="logo-img"></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="browse.html">Browse</a></li>
@@ -36,8 +36,8 @@
     </div>
 
     <!-- Mobile filter toggle -->
-    <div style="padding:0 2rem 1rem; display:none;" id="filter-toggle-wrap">
-      <button class="btn btn-ghost" id="filter-toggle" style="width:100%">⚙ Show Filters</button>
+    <div class="filter-toggle-wrap" id="filter-toggle-wrap">
+      <button class="btn btn-ghost filter-toggle-btn" id="filter-toggle">⚙ Show Filters</button>
     </div>
 
     <div class="browse-layout">
@@ -51,10 +51,9 @@
         <!-- Search -->
         <div class="filter-section">
           <div class="filter-label">Search</div>
-          <div style="position:relative">
-            <input type="text" class="search-input" id="browse-search"
-              placeholder="Search games…"
-              style="padding-left:2.2rem;font-size:.9rem;border-radius:8px">
+          <div class="filter-search-wrap">
+            <input type="text" class="search-input filter-search-input" id="browse-search"
+              placeholder="Search games…">
           </div>
         </div>
 
@@ -112,12 +111,33 @@
         </div>
         <div class="games-grid" id="browse-grid"></div>
         <div class="load-more-wrap">
-          <button class="btn btn-secondary" id="load-more" style="display:none">Load More Games</button>
+          <button class="btn btn-secondary load-more-btn" id="load-more">Load More Games</button>
         </div>
       </div>
 
     </div>
   </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="images/logo.svg" alt="Gamora" class="logo-img"></div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="browse.html">Browse</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="wishlist.html">Wishlist</a>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-credit">Built with ♥ for gamers everywhere.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="GitHub">⚡</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="Discord">💬</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script type="module" src="js/browse.js"></script>
   <script>

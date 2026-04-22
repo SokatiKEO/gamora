@@ -5,15 +5,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Game Details</title>
   <link rel="stylesheet" href="css/style.css">
-  <style>
-    .btn-active-fav { background: #ef4444 !important; border-color: #ef4444 !important; color: #fff !important; }
-    .btn-active-wish { background: var(--accent3) !important; border-color: var(--accent3) !important; color: #fff !important; }
-  </style>
 </head>
 <body>
 
   <nav class="navbar">
-    <a href="index.html" >GAMORA</a>
+    <a href="index.html"><img src="images/logo.svg" alt="Gamora" class="logo-img"></a>
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="browse.html">Browse</a></li>
@@ -63,28 +59,28 @@
 
       <!-- LEFT: Description + Screenshots -->
       <div>
-        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:2px;margin-bottom:1rem;color:var(--text-muted)">ABOUT</h2>
+        <h2 class="detail-heading">ABOUT</h2>
         <div id="game-description" class="detail-description">
-          <div class="skeleton" style="height:1rem;margin-bottom:.5rem;border-radius:4px"></div>
-          <div class="skeleton" style="height:1rem;margin-bottom:.5rem;width:80%;border-radius:4px"></div>
-          <div class="skeleton" style="height:1rem;margin-bottom:.5rem;width:90%;border-radius:4px"></div>
+          <div class="skeleton skeleton-row"></div>
+          <div class="skeleton skeleton-row w-80"></div>
+          <div class="skeleton skeleton-row w-90"></div>
         </div>
 
-        <h2 style="font-family:'Bebas Neue',sans-serif;font-size:1.5rem;letter-spacing:2px;margin:2rem 0 1rem;color:var(--text-muted)">SCREENSHOTS</h2>
+        <h2 class="detail-heading" style="margin-top:2rem">SCREENSHOTS</h2>
         <div class="screenshots-grid" id="screenshots-grid"></div>
       </div>
 
       <!-- RIGHT: Info panel -->
       <div id="info-panel" class="detail-panel">
-        <div class="skeleton" style="height:1rem;margin-bottom:.75rem;border-radius:4px"></div>
-        <div class="skeleton" style="height:1rem;margin-bottom:.5rem;border-radius:4px"></div>
-        <div class="skeleton" style="height:1rem;width:75%;border-radius:4px"></div>
+        <div class="skeleton skeleton-row"></div>
+        <div class="skeleton skeleton-row"></div>
+        <div class="skeleton skeleton-row w-75"></div>
       </div>
 
     </div>
 
     <!-- SIMILAR GAMES -->
-    <section class="section" style="padding-top:0;padding-bottom:4rem">
+    <section class="section flush-top flush-bottom">
       <div class="section-header">
         <h2 class="section-title">
           <span class="section-title-icon"></span>
@@ -101,6 +97,27 @@
     <button class="lightbox-close">✕</button>
     <img src="" alt="screenshot">
   </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div class="footer-brand"><img src="images/logo.svg" alt="Gamora" class="logo-img"></div>
+      <div class="footer-links">
+        <a href="index.html">Home</a>
+        <a href="browse.html">Browse</a>
+        <a href="favorites.html">Favorites</a>
+        <a href="wishlist.html">Wishlist</a>
+      </div>
+      <div class="footer-bottom">
+        <p class="footer-credit">Built with ♥ for gamers everywhere.</p>
+        <div class="footer-socials">
+          <a href="#" aria-label="GitHub">⚡</a>
+          <a href="#" aria-label="Twitter">🐦</a>
+          <a href="#" aria-label="Discord">💬</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <script type="module" src="js/detail.js"></script>
 </body>

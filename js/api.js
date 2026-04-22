@@ -1,4 +1,4 @@
-const API_KEY = "api_key"
+const API_KEY = ""
 const BASE = "https://api.rawg.io/api"
 
 // Game list endpoints
