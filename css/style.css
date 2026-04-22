@@ -71,7 +71,7 @@ body {
 }
 
 /* Cinematic film grain overlay */
-body::after {
+/* body::after {
   content: '';
   position: fixed;
   inset: 0;
@@ -80,7 +80,7 @@ body::after {
   pointer-events: none;
   z-index: 9999;
   animation: grain 0.5s steps(1) infinite;
-}
+} */
 
 @keyframes grain {
   0%, 100% { transform: translate(0, 0); }

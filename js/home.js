@@ -31,8 +31,8 @@ const renderHeroSlide = (idx) => {
     title.textContent = game.name
     desc.textContent = game.genres?.map(g => g.name).join(" • ") || ""
     if (metaRating) metaRating.textContent = `⭐ ${game.rating?.toFixed(1) || "—"}`
-    if (metaYear) metaYear.textContent = `📅 ${game.released?.slice(0, 4) || "N/A"}`
-    if (metaGenre) metaGenre.textContent = `🎯 ${game.genres?.[0]?.name || ""}`
+    if (metaYear) metaYear.innerHTML = `<i class="fa fa-calendar" aria-hidden="true"></i> ${game.released?.slice(0, 4) || "N/A"}`
+    if (metaGenre) metaGenre.innerHTML = `<i class="fa fa-tags" aria-hidden="true"></i> ${game.genres?.[0]?.name || ""}`
     if (detailBtn) detailBtn.href = `detail.html?id=${game.id}`
 
     document.querySelectorAll(".hero-dot").forEach((dot, i) => dot.classList.toggle("active", i === idx))
