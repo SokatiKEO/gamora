@@ -1,6 +1,6 @@
 import { getGame, getGameSeries, getGameScreenshots } from "./api.js"
 import { isFavorite, isWishlisted, toggleFavorite, toggleWishlist } from "./storage.js"
-import { initNavbar, initLightbox, openLightbox, showToast, renderGames } from "./ui.js"
+import { initNavbar, initLightbox, openLightbox, showToast, renderGames, initReviews } from "./ui.js"
 
 const params = new URLSearchParams(location.search)
 const GAME_ID = params.get("id")
@@ -132,4 +132,5 @@ window.onload = () => {
     loadDetail()
     loadScreenshots()
     loadSimilar()
+    initReviews(GAME_ID)
 }

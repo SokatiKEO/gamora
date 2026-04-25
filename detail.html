@@ -80,6 +80,65 @@
 
     </div>
 
+    <!-- REVIEWS -->
+    <section class="section flush-top flush-bottom" id="reviews-section">
+      <div class="section-header">
+        <h2 class="section-title">
+          <span class="section-title-icon"></span>
+          Player Reviews
+        </h2>
+        <button class="btn btn-primary btn-sm" id="open-review-modal">+ Write a Review</button>
+      </div>
+
+      <!-- Review summary bar -->
+      <div class="review-summary" id="review-summary" style="display:none">
+        <div class="review-avg-score" id="review-avg-score">0.0</div>
+        <div class="review-summary-right">
+          <div class="review-stars-display" id="review-stars-display"></div>
+          <div class="review-count" id="review-count">0 reviews</div>
+        </div>
+      </div>
+
+      <div class="reviews-list" id="reviews-list">
+        <p class="reviews-empty">No reviews yet. Be the first to share your thoughts!</p>
+      </div>
+    </section>
+
+    <!-- REVIEW MODAL -->
+    <div class="review-modal-overlay" id="review-modal-overlay">
+      <div class="review-modal" id="review-modal">
+        <button class="review-modal-close" id="review-modal-close">✕</button>
+        <h3 class="review-modal-title" id="review-modal-title">Write a Review</h3>
+
+        <div class="review-form">
+          <div class="form-group">
+            <label class="form-label">Your Name</label>
+            <input type="text" class="form-input" id="review-author" placeholder="Anonymous" maxlength="40">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Rating</label>
+            <div class="star-picker" id="star-picker">
+              <span class="star-btn" data-value="1">★</span>
+              <span class="star-btn" data-value="2">★</span>
+              <span class="star-btn" data-value="3">★</span>
+              <span class="star-btn" data-value="4">★</span>
+              <span class="star-btn" data-value="5">★</span>
+            </div>
+            <input type="hidden" id="review-rating" value="0">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Your Review</label>
+            <textarea class="form-textarea" id="review-body" placeholder="Share your experience with this game…" rows="5" maxlength="1000"></textarea>
+            <span class="form-char-count"><span id="char-count">0</span> / 1000</span>
+          </div>
+
+          <button class="btn btn-primary btn-block" id="review-submit">Submit Review</button>
+        </div>
+      </div>
+    </div>
+
     <!-- SIMILAR GAMES -->
     <section class="section flush-top flush-bottom">
       <div class="section-header">
