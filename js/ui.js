@@ -110,12 +110,13 @@ export const buildCard = (game) => {
 }
 
 // Render a list of games into a container
-export const renderGames = (container, games) => {
-    container.innerHTML = ""
+export const renderGames = (container, games, append = false) => {
+    if (!append) container.innerHTML = ""
     if (!games || games.length === 0) {
-        container.innerHTML = `<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">🎮</div><div class="empty-title">No games found</div><p class="empty-sub">Try adjusting your filters</p></div>`
+        if (!append) container.innerHTML = `<div class="empty-state" style="grid-column:1/-1"><div class="empty-icon">🎮</div><div class="empty-title">No games found</div><p class="empty-sub">Try adjusting your filters</p></div>`
         return
     }
+    const offset = append ? container.children.length : 0
     games.forEach((game, i) => {
         const card = buildCard(game)
         card.style.animationDelay = `${i * 0.05}s`

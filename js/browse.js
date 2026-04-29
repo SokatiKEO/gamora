@@ -1,14 +1,7 @@
-import { browseGames, searchGames, getGenres } from "./api.js"
+import { browseGames, searchGames, getGenres, getPlatforms } from "./api.js"
 import { renderSkeletons, renderGames, initNavbar, debounce } from "./ui.js"
 
-const PLATFORM_MAP = [
-    { name: "PC", id: 4 },
-    { name: "PlayStation", id: 187 },
-    { name: "Xbox", id: 1 },
-    { name: "Switch", id: 7 },
-    { name: "iOS", id: 3 },
-    { name: "Android", id: 21 },
-]
+const PLATFORM_WHITELIST = ["PC", "PlayStation", "Xbox", "Nintendo Switch", "iOS", "Android", "macOS", "Linux"]
 
 let currentPage = 1
 let totalCount = 0
@@ -22,16 +15,21 @@ let activeFilters = {
 
 // Render filter chips
 const initFilters = async () => {
-    // Platform multiselect logic
-    renderChips("platform-chips", PLATFORM_MAP, "id", "name", (id) => {
-        const val = String(id)
-        const index = activeFilters.platforms.indexOf(val)
-        if (index > -1) {
-            activeFilters.platforms.splice(index, 1)
-        } else {
-            activeFilters.platforms.push(val)
-        }
-    })
+    try {
+        const platData = await getPlatforms()
+        const platforms = platData.results.filter(p => PLATFORM_WHITELIST.includes(p.name))
+        renderChips("platform-chips", platforms, "id", "name", (id) => {
+            const val = String(id)
+            const index = activeFilters.platforms.indexOf(val)
+            if (index > -1) {
+                activeFilters.platforms.splice(index, 1)
+            } else {
+                activeFilters.platforms.push(val)
+            }
+        })
+    } catch (e) {
+        console.error("Error loading platforms:", e)
+    }
 
     try {
         const data = await getGenres()
@@ -109,7 +107,7 @@ const loadGames = async (reset = true) => {
 
         totalCount = data.count || 0
         if (reset) grid.innerHTML = ""
-        renderGames(grid, data.results)
+        renderGames(grid, data.results, !reset)
 
         if (countEl) {
             countEl.innerHTML = `Showing <span>${grid.children.length}</span> of <span>${totalCount.toLocaleString()}</span> games`
